@@ -1,30 +1,28 @@
 package Binarysearcher;
 
 public class BinarySearcher{
-    public static String numberChecker(int userInput, int[] listOfNumbers, int firstIndex, int lastIndex) {
+    public static int numberChecker(int userInput, int[] numbers, int firstIndex, int lastIndex) {
         if(firstIndex <= lastIndex){
             int middileIndex = (firstIndex + lastIndex) / 2;
-            if(listOfNumbers[middileIndex] < userInput){
+            if(numbers[middileIndex] < userInput){
                 firstIndex = middileIndex + 1;
-            return numberChecker(userInput, listOfNumbers, firstIndex, lastIndex);
-            }else if (listOfNumbers[middileIndex]== userInput){
-                return "Element is found at index: "+middileIndex;
+            return numberChecker(userInput, numbers, firstIndex, lastIndex);
+            }else if (numbers[middileIndex]== userInput){
+                return middileIndex;
             }else {
                 lastIndex = middileIndex -1;
-                return numberChecker(userInput, listOfNumbers, firstIndex, lastIndex);
+                return numberChecker(userInput, numbers, firstIndex, lastIndex);
             }
         }
-        return "Element is not found!";
+        return -1;
     }
 
     public static void main(String[] args){
-        int userInput = Integer.parseInt(args[0]);
-        int listOfNumbers[] = {10,20,30,40,50};
-        int firstIndex = 0;
-        int lastIndex = listOfNumbers.length - 1;
-        System.out.println(numberChecker(userInput, listOfNumbers, firstIndex, lastIndex));
+        int userInput = 20;
+        int numbers[] = {10,20,30,40,50};
+        int lastIndex = numbers.length - 1;
+        System.out.println(numberChecker(userInput, numbers, 0, lastIndex));
     }
-
 }
 
 

@@ -5,4 +5,4 @@ diff actual testFor10
 java BinarySearcher 60 > actual
 diff actual testFor60
 java BinarySearcher 30 > actual
-diff actual testFor30hg
+diff actual testFor30

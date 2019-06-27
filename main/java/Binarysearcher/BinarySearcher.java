@@ -7,10 +7,10 @@ public class BinarySearcher{
     public static <T extends Comparable<T>> int elementFinder(T userInput, List<T> elements, int firstIndex, int lastIndex) {
         if(firstIndex <= lastIndex){
             int middileIndex = (firstIndex + lastIndex) / 2;
-            if(elements.get(middileIndex).compareTo(userInput) < 0){
-                return elementFinder(userInput, elements, middileIndex+1, lastIndex);
-            }else if (elements.get(middileIndex).equals(userInput)){
+            if (elements.get(middileIndex).equals(userInput)){
                 return middileIndex;
+            }else if(elements.get(middileIndex).compareTo(userInput) < 0){
+                return elementFinder(userInput, elements, middileIndex+1, lastIndex);
             }
             return elementFinder(userInput, elements, 0, middileIndex-1);
         }
